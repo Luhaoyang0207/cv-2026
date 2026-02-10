@@ -43,19 +43,30 @@ body {
 
 .glass-overlay {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter></svg>');
     z-index: -1;
     pointer-events: none;
 }
 
 @keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Typography */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: 'Outfit', sans-serif;
     margin-bottom: 0.5em;
     font-weight: 700;
@@ -69,7 +80,8 @@ a {
 
 /* Container */
 .container {
-    max-width: 1000px; /* Restrict width for better reading */
+    max-width: 1000px;
+    /* Restrict width for better reading */
     margin: 0 auto;
     padding: 2rem;
 }
@@ -85,7 +97,8 @@ a {
 }
 
 .hero .container {
-    display: flex; /* Side by side on desktop */
+    display: flex;
+    /* Side by side on desktop */
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -188,7 +201,7 @@ a {
     padding: 2rem;
     border-radius: 12px;
     border: var(--glass-border);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     transform: rotateY(-10deg) rotateX(5deg);
     transition: transform 0.5s ease;
     font-family: 'Fira Code', monospace;
@@ -208,7 +221,7 @@ a {
 .section-title {
     font-size: 2rem;
     margin-bottom: 2rem;
-    border-bottom: 2px solid rgba(255,255,255,0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 0.5rem;
     display: inline-block;
 }
@@ -263,7 +276,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    border-left: 2px solid rgba(255,255,255,0.1);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
     padding-left: 2rem;
     position: relative;
 }
@@ -346,7 +359,7 @@ a {
 
 .progress-bar {
     height: 6px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     overflow: hidden;
 }
@@ -363,7 +376,7 @@ a {
     padding: 4rem 0 2rem;
     color: var(--text-secondary);
     font-size: 0.9rem;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     margin-top: 4rem;
 }
 
@@ -385,30 +398,61 @@ a {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .contact-links {
         justify-content: center;
     }
-    
+
     .hero-visual {
-        display: none; /* Hide 3D element on mobile to save space */
+        display: none;
+        /* Hide 3D element on mobile to save space */
     }
-    
+
     .animate-text-gradient {
         font-size: 3rem;
     }
-    
+
     .timeline {
         padding-left: 1rem;
         border-left: none;
     }
-    
+
     .timeline-item::before {
         display: none;
     }
-    
+
     .timeline-item {
         border-left: 2px solid var(--accent-color);
         border-radius: 0 12px 12px 0;
     }
+}
+
+/* Add cursor style for typewriter effect */
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-color: var(--accent-color);
+    animation: blink 0.8s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Ensure code block is ready for dynamic typing */
+.code-block-decoration code {
+    display: inline-block;
+    width: 100%;
+    min-height: 150px;
+    /* Prevent layout shift during typing */
 }
